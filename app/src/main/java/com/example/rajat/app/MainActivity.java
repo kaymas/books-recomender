@@ -17,6 +17,9 @@ import android.util.Log;
 import android.view.View;
 import android.widget.LinearLayout;
 import android.widget.Toast;
+
+import com.mikepenz.materialdrawer.DrawerBuilder;
+
 import org.altbeacon.beacon.BeaconConsumer;
 import org.altbeacon.beacon.BeaconManager;
 import org.altbeacon.beacon.Region;
@@ -41,6 +44,8 @@ public class MainActivity extends AppCompatActivity implements BeaconConsumer {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        new DrawerBuilder().withActivity(this).build();
 
         BeaconManager beaconManager = BeaconManager.getInstanceForApplication(this);
 
